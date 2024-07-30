@@ -69,6 +69,57 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-hello-world2" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/07/30/hello-world2/" class="article-date">
+  <time class="dt-published" datetime="2024-07-30T02:11:45.545Z" itemprop="datePublished">2024-07-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/07/30/hello-world2/">Hello World22222222222222</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/07/30/hello-world2/" data-id="clz7s8ut70000yoe95igecohn" data-title="Hello World22222222222222" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2024/07/29/hello-world/" class="article-date">
@@ -120,6 +171,47 @@
 
 
   
+    <article id="post-新建文件夹/透视学习" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/07/25/%E6%96%B0%E5%BB%BA%E6%96%87%E4%BB%B6%E5%A4%B9/%E9%80%8F%E8%A7%86%E5%AD%A6%E4%B9%A0/" class="article-date">
+  <time class="dt-published" datetime="2024-07-25T08:13:24.710Z" itemprop="datePublished">2024-07-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h4 id="透视基本"><a href="#透视基本" class="headerlink" title="透视基本"></a>透视基本</h4><ul>
+<li>单点透视：完全面向方块，方块保持正方向，只是上下左右移动，视野里面只会出现一个消失点，就是单点透视</li>
+<li>两点透视：方块按y轴旋转，视野内会有两个消失点，消失点离视中心越近移动的越慢</li>
+<li>三点透视：方块在按y轴旋转的基础上再按另一个轴转，就会有三个消失点</li>
+</ul>
+<h4 id="消失点规律"><a href="#消失点规律" class="headerlink" title="消失点规律"></a>消失点规律</h4><ul>
+<li>离视中越近移动越慢，反之越快，改变一个轴的旋转时，就是再改变另外两个轴的消失点的高低</li>
+</ul>
+<h4 id="方块绘制"><a href="#方块绘制" class="headerlink" title="方块绘制"></a>方块绘制</h4><p>首先确定视平线和中心消失点，这样可以确定方块是在视野的哪个位置，对方块的旋转做三次轴旋转分析，例如分析Y轴的旋转，则代表着xz轴上的消失点的移动，对其他轴也一样，将对应的消失点的线画出来，线之间的相交就对应了想要的方块</p>
+<h4 id="空间位置确认"><a href="#空间位置确认" class="headerlink" title="空间位置确认"></a>空间位置确认</h4><ul>
+<li>基于同一空间下的同一高度的物体，在不同的远近时大小也不一样，可以基于一点透视画出辅助高度线和辅助宽度线来确定不同远处的同一物体的大小。</li>
+<li>基于同一空间下的等间隔物体，可以基于一点透视，同时定一个虚拟消失点（取决于间隔大小），按照虚拟消失点可以在单点透视线上获得统一的间隔</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/07/25/%E6%96%B0%E5%BB%BA%E6%96%87%E4%BB%B6%E5%A4%B9/%E9%80%8F%E8%A7%86%E5%AD%A6%E4%B9%A0/" data-id="clz7s8utc0001yoe94atw9m5a" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
 
 
 </section>
@@ -151,7 +243,15 @@
       <ul>
         
           <li>
+            <a href="/2024/07/30/hello-world2/">Hello World22222222222222</a>
+          </li>
+        
+          <li>
             <a href="/2024/07/29/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2024/07/25/%E6%96%B0%E5%BB%BA%E6%96%87%E4%BB%B6%E5%A4%B9/%E9%80%8F%E8%A7%86%E5%AD%A6%E4%B9%A0/">(no title)</a>
           </li>
         
       </ul>
