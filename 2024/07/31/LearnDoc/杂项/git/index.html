@@ -49,6 +49,7 @@
                 <div id="search">
     <i id="search-icon" class="fa fa-bars" title="切换" ></i>
 </div>
+<div id="toc"></div>
 <!-- 侧边目录栏 -->
 <div id="tree">
     
@@ -307,7 +308,7 @@
                         </ul>
     
 </div>
-<div id="toc"></div>
+
 
             </aside>
 
@@ -322,18 +323,12 @@
 <h4 id="git分支合并">git分支合并</h4>
 <pre><code>git merge dev（把dev分支合并到当前分支）</code></pre>
 <h4 id="git连接不上刷新dns">git连接不上，刷新dns</h4>
-<pre><code class="highlight shell">本地：
-git config --global --unset http.proxy
-git config --global --unset https.proxy
-挂梯子：
-git config --global http.proxy 127.0.0.1:7890
-git config --global https.proxy 127.0.0.1:7890
-//7890是梯子的端口号</code></pre>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs shell">本地：<br>git config --global --unset http.proxy<br>git config --global --unset https.proxy<br>挂梯子：<br>git config --global http.proxy 127.0.0.1:7890<br>git config --global https.proxy 127.0.0.1:7890<br>//7890是梯子的端口号<br></code></pre></td></tr></table></figure>
 <h4 id="git-完全取消最近的提交并回退到上一个状态">git
 完全取消最近的提交并回退到上一个状态</h4>
-<pre><code class="highlight plaintext">git reset --hard HEAD~1</code></pre>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs pgsql">git <span class="hljs-keyword">reset</span> <span class="hljs-comment">--hard HEAD~1</span><br></code></pre></td></tr></table></figure>
 <h4 id="刷新dns缓存">刷新DNS缓存</h4>
-<pre><code class="highlight plaintext">cmd中运行： ipconfig/flushdns</code></pre>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs dockerfile"><span class="hljs-keyword">cmd</span><span class="language-bash">中运行： ipconfig/flushdns</span><br></code></pre></td></tr></table></figure>
 
 </div>
 
