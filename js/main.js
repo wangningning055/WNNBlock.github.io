@@ -6,9 +6,9 @@ $(document).ready(function () {
     showArticleIndex();
     switchTreeOrIndex();
 });
+
 function hideTree(tree)
 {
-    console.log("%%%%%%%");
     var treeActive = $("#tree .fileui");
     var treeActive2 = $("#tree .directoryui-child");
     treeActive.hide()
@@ -17,7 +17,6 @@ function hideTree(tree)
 
 // 点击目录事件
 function clickTreeDirectory() {
-
     var tree = $("#tree")
     hideTree(tree)
 
@@ -51,19 +50,59 @@ function clickTreeDirectory() {
     });
 }
 function pjaxLoad(){
-    $(document).pjax('#tree a', '#content', {fragment:'#content', timeout:8000});
     $(document).pjax('#menu a', '#content', {fragment:'#content', timeout:8000});
-    $(document).on({
-        "pjax:complete": function(e) {
-            $("pre code").each(function (i, block){
-                hljs.highlightBlock(block);
-            });
-            
+    // $(document).pjax('#tree a', '#content', {fragment:'#content', timeout:8000});
+
+
+    $(document).pjax('#tree a:not(.directory)', '#content', {
+        fragment: '#content',
+        timeout: 8000
+    });
+    
+    $('#tree').on('click', 'a.directory', function(event) {
+        event.preventDefault();
+    });
+
+    // $('#tree').on('a.file','#article',{ 
+    //     "pjax:complete": function(e) {
+    //     console.log("????????")
+
+    //     $("pre code").each(function (i, block){
+    //         hljs.highlightElement(block);
+    //     });
+
+    //     // 添加 active
+    //     $("#tree .active").removeClass("active");
+    //     e.relatedTarget.parentNode.classList.add("active");
+
+    // }
+    // });
+    $(document).on('pjax:complete', function(e) {
             // 添加 active
+        showArticleIndex();
+        console.log(e.relatedTarget.className)
+        $("pre code").each(function (i, block){
+            hljs.highlightElement(block);
+        });
+        if(e.relatedTarget.className == "file")
+        {
             $("#tree .active").removeClass("active");
             e.relatedTarget.parentNode.classList.add("active");
         }
-    });
+ 
+    })
+
+    // $(document).on('#directory a', '#article',{
+    //     "pjax:complete": function(e) {
+    //         $("pre code").each(function (i, block){
+    //             hljs.highlightElement(block);
+    //         });
+
+    //         // 添加 active
+    //         $("#tree .active").removeClass("active");
+    //         e.relatedTarget.parentNode.classList.add("active");
+    //     }
+    // });
 }
 
 // 循环递归展开父节点
