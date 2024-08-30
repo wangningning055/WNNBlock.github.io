@@ -10,7 +10,7 @@ html, body{
     height: 100%;
     /* background: rgba(255, 255, 255, 0.8) */
     /* background: url("/images/back.jpg") no-repeat center center fixed; */
-    background: url("/images/back2.jpg") no-repeat center center fixed;
+    background: url("/images/b6.jpg") no-repeat center center fixed;
     
     background-size: cover;
     /* background: #414f50; */
@@ -40,7 +40,7 @@ nav {
 #main2{
     width: 100%;
     height: 100%;
-    background: rgba(255, 255, 255, 0.808);
+    background: rgba(255, 255, 255, 0.5);
     position: fixed;
     z-index: 1;
 }
@@ -149,8 +149,8 @@ aside ul li a:hover {
 }
 aside #tree .active a,
 aside #tree .active a:hover {
-    color: #87daff;
-    border-bottom: 1px solid #87daff;
+    color: #863c8d;
+    border-bottom: 1px solid #4e0728;
 }
 
 aside #tree i.fa {
