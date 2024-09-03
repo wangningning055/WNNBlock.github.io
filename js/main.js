@@ -282,11 +282,10 @@ function switchTreeOrIndexExpend(){
             {
                 $("#content").animate({paddingLeft: '20'}, "fast", function(){
                 });
+                $("nav #menu").animate({paddingLeft: '20'}, "fast");
+
             }
 
-            
-            $("nav #menu").animate({paddingLeft: '20'}, "fast");
-           
         }
         else
         {
@@ -297,10 +296,11 @@ function switchTreeOrIndexExpend(){
             {
                 $("#content").animate({paddingLeft: '300px'}, "fast", function(){
                 });
+                $("nav #menu").animate({paddingLeft: '300px'}, "fast");
+
             }
 
 
-            $("nav #menu").animate({paddingLeft: '300px'}, "fast");
         }
         isExpend = !isExpend
     });
