@@ -13,7 +13,7 @@
 <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
 
     
-<link rel="stylesheet" href="/lib/highlight/styles/atom-one-dark.css">
+<link rel="stylesheet" href="/lib/highlight/styles/atom-one-light.css">
 
 <meta name="generator" content="Hexo 7.3.0"></head>
 <body>
@@ -45,11 +45,16 @@
 
 </ul>
         </nav>
-            <aside id="#aside">
-                <div id="search">
-    <i id="search-icon" class="fa fa-bars" title="切换" ></i>
+        <div id="expend">
+            <i id="expend-icon" class="fa fa-arrow-left" title="切换" ></i>
+        </div>
+
+        <aside id="#aside">
+            <div id="search">
+    <i id="search-icon" class="fa fa-file-text" title="切换" ></i>
 </div>
 <div id="toc"></div>
+
 <!-- 侧边目录栏 -->
 <div id="tree">
     
@@ -310,18 +315,18 @@
 </div>
 
 
-            </aside>
+        </aside>
 
 
-            <div id="content">
-                
+        <div id="content">
+            
 <div id="article">
     <h4 id="git拉取并合并">git拉取并合并</h4>
-<pre><code>git pull</code></pre>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">git pull<br></code></pre></td></tr></table></figure>
 <h4 id="git只拉取不合并">git只拉取不合并</h4>
-<pre><code>git fetch</code></pre>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">git fetch<br></code></pre></td></tr></table></figure>
 <h4 id="git分支合并">git分支合并</h4>
-<pre><code>git merge dev（把dev分支合并到当前分支）</code></pre>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">git merge dev（把dev分支合并到当前分支）<br></code></pre></td></tr></table></figure>
 <h4 id="git连接不上刷新dns">git连接不上，刷新dns</h4>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs shell">本地：<br>git config --global --unset http.proxy<br>git config --global --unset https.proxy<br>挂梯子：<br>git config --global http.proxy 127.0.0.1:7890<br>git config --global https.proxy 127.0.0.1:7890<br>//7890是梯子的端口号<br></code></pre></td></tr></table></figure>
 <h4 id="git-完全取消最近的提交并回退到上一个状态">git
@@ -332,7 +337,7 @@
 
 </div>
 
-            </div>
+        </div>
 
  
     </div>
@@ -342,10 +347,6 @@
     
 <script src="/lib/jquery-3.71.min.js"></script>
 
-    
-<script src="/lib/highlight/highlight.js"></script>
-
-    <script>hljs.highlightAll();</script>
     
 <script src="/lib/jquery.pjax.js"></script>
 

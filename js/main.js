@@ -1,11 +1,56 @@
 var isOpen = false
-
+var isExpend = true
+var isPhone = false
 $(document).ready(function () {
     clickTreeDirectory();
     pjaxLoad();
     showArticleIndex();
     switchTreeOrIndex();
+    switchTreeOrIndexExpend();
+    isOnPhone();
 });
+
+
+function isOnPhone()
+{
+    // 创建一个媒体查询
+    var mediaQuery = window.matchMedia("(max-width: 800px)");
+
+    // 监听媒体查询状态的变化
+    mediaQuery.addEventListener("change", function(e) {
+        if (e.matches) {
+            // 当视口宽度小于或等于 800px 时执行的代码
+            isPhone = true;
+        } else {
+            // 当视口宽度大于 800px 时执行的代码
+            isPhone = false;
+        }
+    });
+
+        // 创建一个媒体查询，用于检测屏幕方向是否为 portrait
+    var portraitMediaQuery = window.matchMedia("(orientation: portrait)");
+
+    // 检查是否符合媒体查询条件
+    if (portraitMediaQuery.matches) {
+        // 当屏幕方向为 portrait 时执行的代码
+            isPhone = true;
+    } else {
+        // 当屏幕方向为 landscape 时执行的代码
+            isPhone = false;
+    }
+
+    // 动态监听屏幕方向的变化
+    portraitMediaQuery.addEventListener("change", function(e) {
+        if (e.matches) {
+            // 当屏幕方向为 portrait 时执行的代码
+            isPhone = true;
+        } else {
+            // 当屏幕方向为 landscape 时执行的代码
+            isPhone = false;
+        }
+    });
+
+}
 
 function hideTree(tree)
 {
@@ -204,20 +249,62 @@ function switchTreeOrIndex(){
         isOpen = !isOpen;
         $("#toc").animate({height:'toggle'},"fast");
         $("#tree").animate({height:'toggle'},"fast");
-        // if(isOpen)
-        // {
-        //     $("#toc").animate({height:'show'},"swing");
-        //     $("#tree").animate({height:'hide'},"swing");
-        // }
-        // else
-        // {
-        //     $("#tree").animate({height:'show'},"swing");
-        //     $("#toc").animate({height:'hide'},"swing");
-        // }
 
     });
 }
+function switchTreeOrIndexExpend(){
+    $("#expend-icon").on("click", function(e){
+        var mainContent = $("#content");
+        $("aside").css('white-space', 'nowrap');
+        var mediaQuery = window.matchMedia("(max-width: 800px)");
 
+
+
+        // var scrollTop = $("#content").scrollTop();
+        // var scrollLeft = $("#content").scrollLeft();
+
+        $("#content").css({position: 'relative', left: mainContent.offset().left - $("#content").scrollLeft()});
+        $("aside").animate({width: 'toggle'}, "fast", function() {
+            $("aside").css('white-space', 'normal');
+            $("#content").css({position: '', left: ''});  // 恢复原状
+        });
+
+
+
+        
+       
+        if(isExpend)
+        {
+            $("#expend-icon").removeClass("fa fa-arrow-left");
+            $("#expend-icon").addClass("fa fa-arrow-right");
+            
+            if(!isPhone)
+            {
+                $("#content").animate({paddingLeft: '20'}, "fast", function(){
+                });
+            }
+
+            
+            $("nav #menu").animate({paddingLeft: '20'}, "fast");
+           
+        }
+        else
+        {
+            $("#expend-icon").removeClass("fa fa-arrow-right");
+            $("#expend-icon").addClass("fa fa-arrow-left");
+
+            if(!isPhone)
+            {
+                $("#content").animate({paddingLeft: '300px'}, "fast", function(){
+                });
+            }
+
+
+            $("nav #menu").animate({paddingLeft: '300px'}, "fast");
+        }
+        isExpend = !isExpend
+    });
+}
 
 
 // 搜索框输入事件

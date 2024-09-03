@@ -20,9 +20,20 @@ aside {
     width: 300px;
     height: 100%;
     position: fixed;
-    background: rgba(255, 255, 255, 0)
+    background: rgb(255, 255, 255, 0.3);
+    z-index: 1;
 }
-
+#expend {
+    width: 30px;
+    height: 100%;
+    position: fixed;
+    background: rgb(255, 255, 255, 0);
+    z-index: 2;
+    pointer-events: none;
+}
+#expend-icon {
+    pointer-events: all;
+}
 nav {
     height: 50px;
     width: 100%;
@@ -100,11 +111,11 @@ aside #search i.fa.fa-search {
     position: absolute;
     top: 0;
     right: 0;
-    color: #757575;
+    color: #75757500;
     font-size: 20px;
     width: 40px;
     height: 50px;
-    background: #131417;
+    background: #13141700;
     text-align: center;
     line-height: 2.5;
 }
@@ -112,13 +123,35 @@ aside #search i.fa.fa-search {
 aside #search-icon{
     position: absolute;
     right: 0;
+    background: #13141700;
 }
 
 /* 滚动条 */
 aside {
     overflow-y: scroll;
-}
 
+}
+aside::-webkit-scrollbar
+{
+    background-color: rgba(0,0,0,0);
+}
+aside::-webkit-scrollbar-track-piece
+{
+    background-color: rgba(0,0,0,0);
+}
+aside::-webkit-scrollbar-thumb
+{
+    border-radius: 10px;
+    box-shadow: inset 0 0 6px rgba(165, 118, 172, 0.3);
+    background-color: rgba(141, 22, 92, 0.3);
+}
+aside::-webkit-scrollbar-track
+{
+    box-shadow: inset 0 0 6px rgba(231, 145, 145, 0.3);
+    border-radius: 10px;
+    background-color: rgba(141, 22, 92, 0.3);
+
+}
 /* 树目录位置 */
 aside #tree {
     padding-top: 55px
@@ -232,6 +265,7 @@ aside #tree i.fa {
     box-shadow: 0px 0px 5px #999;
     margin-left: auto;
     right: 0;
+    background: #ce528c3f;
 }
 
 #article img {
@@ -253,49 +287,63 @@ aside #tree i.fa {
 
 /* 表格处理 */
 #article table {
-  width: 100%;
-  border: 0;
-  margin: 20px 0 50px 0;
-  border-collapse: collapse;
-  border-spacing: 0;
-  line-height: 35px;
-  border-radius: 8px;
-  box-shadow: 0px 0px 5px #999;
+    text-align: left;
+    width: 100%;
+    border: 0;
+    margin: 20px 0 50px 0;
+    border-collapse: collapse;
+    border-spacing: 0;
+    line-height: 35px;
+    border-radius: 8px;
+    background: #e9000000;
 }
 
 #article table th {
-  background: #000000;
+  background: #e9000000;
+  width: 100%;
   font-weight: 800;
   font-size: 18px;
   text-align: left;
   line-height: 35px;
-  color: #FFF;
+  color: #ffffff00;
 }
 
 #article table tr:nth-child(odd) {
-  background: #F4F4F4;
+  background: #dd89c100;
+  width: 100%;
 }
 
-#article table tr:hover,
+/* #article table tr:hover
+{
+  width: 100%;
+    
+}
 #article table td:hover {
-  background: #000000;
-  color: #FFF;
+  background: #b8131300;
+  color: #be6da6;
+  width: 100%;
+} */
+#article table td.gutter{
+  width:1%;
+    
 }
 
 #article table td, table th {
-  padding: 5px 20px 5px 20px
+  padding: 1px 1px 1px 1px
 }
 
 #article table tr:first-child th:first-child {
   border-top-left-radius: 3px;
+  width: 100%;
 }
 
 #article table tr:first-child th:last-child {
   border-top-right-radius: 3px;
+  width: 100%;
 }
 
 #article table tr:last-child td:first-child {
-  border-bottom-left-radius: 3px;
+  border-bottom-left-radius: 30px;
 }
 
 #article table tr:last-child td:last-child {
@@ -341,19 +389,15 @@ aside #search #search-icon {
     color: #999;
     font-size: 20px;
     width: 40px;
-    height: 50px;
-    background: #131417;
+    height: 40px;
+    background: #e62d9f00;
     text-align: center;
-    line-height: 2.5;
-    text-decoration: none
+    text-decoration: none;
+    border-radius: 10px;
 }
 aside #search #search-icon:hover {
     cursor: pointer;
     color: #910050;
-    /* -moz-user-select: none;
-    -ms-user-select: none;
-    -o-user-select: none;
-    user-select: none; */
 }
 .hljs{
     text-align: left;
@@ -363,7 +407,7 @@ aside #search #search-icon:hover {
 
 @media screen and (max-width: 800px) {
 	aside {
-		display: none;
+        background: rgb(231, 224, 225);
 	}
 
 	#content {
@@ -379,7 +423,7 @@ aside #search #search-icon:hover {
 @media all and (orientation : portrait) {
 
 	aside {
-		display: none;
+        background: rgb(236, 225, 228);
 	}
 
 	#content {
